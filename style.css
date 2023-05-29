@@ -1,0 +1,13 @@
+body{
+    background-color: rgba(106, 2, 2, 0.724);
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+div{
+    font-size: 40px;
+    color: white;
+}
