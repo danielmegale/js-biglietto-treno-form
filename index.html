@@ -10,12 +10,24 @@
 <body>
     <section>
         <div>
-            <label for="user-age"></label>
-            <input type="number" min="1" max="99" value="20">
-            <p id="user-age">La tua età:</p>
-            <p id="user-km">I kilometri indicati:</p>
-            <p id=ticket>Prezzo biglietto:</p>
+            <label for="user">Nome Cognome</label>
+            <input id="user" type="text" value="Pippo Pluto">
+            <label for="user-age">Fascia d'Età</label>
+            <select id="user-age">
+                <option value="minorenne">Minorenne</option>
+                <option value="maggiorenne">Maggiorenne</option>
+                <option value="over65">Over 65</option>
+            </select>
+            <label for="user-km">Kilometri da percorrere:</label>
+            <input id="user-km" type="text" value="">
+            <button id="button">genera</button>
+        </div>
+        <div>
+            <p id="user-ticket"></p>
             <p id="coupon-ticket"></p>
+            <p>carozze</p>
+            <p>codice CP</p>
+            <p id="ticket"></p>
         </div>
 
     </section>
