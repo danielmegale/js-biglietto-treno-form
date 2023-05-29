@@ -9,7 +9,8 @@
 </head>
 <body>
     <section>
-        <div>
+        <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+        <div class="card">
             <label for="user">Nome Cognome</label>
             <input id="user" type="text" value="Pippo Pluto">
             <label for="user-age">Fascia d'Età</label>
@@ -20,14 +21,18 @@
             </select>
             <label for="user-km">Kilometri da percorrere:</label>
             <input id="user-km" type="text" value="20">
-            <button id="button">genera</button>
+            <button id="button">Genera</button>
+            <button id="reset">Reset</button>
         </div>
-        <div>
-            <p id="user-ticket"></p>
-            <p id="coupon-ticket"></p>
-            <p id="cab"></p>
-            <p id="code"></p>
-            <p id="ticket"></p>
+        <div id="none" class="d-none">
+            <h1>IL TUO BIGLIETTO</h1>
+            <div class="card">
+                <p id="user-ticket"></p>
+                <p id="coupon-ticket"></p>
+                <p id="cab"></p>
+                <p id="code"></p>
+                <p id="ticket"></p>
+            </div>
         </div>
 
     </section>

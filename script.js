@@ -8,20 +8,24 @@ const Km =document.getElementById('user-km');
 const Button =document.getElementById('button');
 const Name =document.getElementById('user');
 const userTicket=document.getElementById('user-ticket');
+const reset=document.getElementById('reset')
 const cab =document.getElementById('cab')
 let code=document.getElementById('code')
+const none=document.getElementById('none')
 // al click del button
 Button.addEventListener('click', function(){
     //User Info
     const user = Name.value.trim();
     console.log(user);
+    userTicket.innerText ='Nome passeggero: ' + user;
     
     const userAge = Age.value.trim();
     console.log(userAge);
-    // + ' ' + 'Anni', typeof userAge
+    
     const userKm =parseInt( Km.value.trim());
     console.log(userKm +'Km', typeof userKm);
-    userTicket.innerText ='Nome passeggero: ' + user;
+    
+    
     // Cab Number
     const minCab=1;
     const maxCab=10;
@@ -29,16 +33,16 @@ Button.addEventListener('click', function(){
     const cabRandom =Math.floor(randomCab * (maxCab -minCab))+minCab;
     console.log(cabRandom)
     cab.innerText='Carrozza: ' + cabRandom ;
-
+    
     // Code CP
     const minCode=1000;
     const maxCode=9999;
     const randomCode=Math.random();
     const codeRandom = Math.floor(randomCode * (maxCode -minCode))+minCode;
     console.log(codeRandom)
-    code.innerText='Codice CP ' + codeRandom
-
-
+    code.innerText='Codice CP: ' + codeRandom
+    
+    
     //Validatore
     let coupon= 1;
     let newPrice;
@@ -53,9 +57,9 @@ Button.addEventListener('click', function(){
         couponTicket.innerText='Offerta: ' + 'Biglietto standard';
         
         if (userAge ==='minorenne'){
-             coupon = 0.80;
-             console.log(coupon);
-             newPrice = ticketPrice * coupon;
+            coupon = 0.80;
+            console.log(coupon);
+            newPrice = ticketPrice * coupon;
             console.log(newPrice);
             element.innerText ='Prezzo Biglietto' + ' ' +  (newPrice).toFixed(2) + '€';
             couponTicket.innerText='Offerta: ' + 'Biglietto Ridotto';
@@ -63,9 +67,20 @@ Button.addEventListener('click', function(){
             coupon = 0.60;
             console.log(coupon);
             newPrice = ticketPrice * coupon;
-             console.log(newPrice);
+            console.log(newPrice);
             element.innerText ='Prezzo Biglietto' + ' ' +  (newPrice).toFixed(2) + '€';
             couponTicket.innerText='Offerta: ' + 'Biglietto Senior';
         }
     }
+    //card
+    none.className='d-block'
 });
+reset.addEventListener('click',  function(){
+    Name.value=''
+    Age.value=''
+    Km.value=''
+    none.className='d-none'
+    
+})
+
+
