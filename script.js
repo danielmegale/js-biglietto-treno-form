@@ -17,7 +17,7 @@ Button.addEventListener('click', function(){
     //User Info
     const user = Name.value.trim();
     console.log(user);
-    userTicket.innerText ='Nome passeggero: ' + user;
+    
     
     const userAge = Age.value.trim();
     console.log(userAge);
@@ -32,7 +32,7 @@ Button.addEventListener('click', function(){
     const randomCab=Math.random();
     const cabRandom =Math.floor(randomCab * (maxCab -minCab))+minCab;
     console.log(cabRandom)
-    cab.innerText='Carrozza: ' + cabRandom ;
+    
     
     // Code CP
     const minCode=1000;
@@ -40,13 +40,13 @@ Button.addEventListener('click', function(){
     const randomCode=Math.random();
     const codeRandom = Math.floor(randomCode * (maxCode -minCode))+minCode;
     console.log(codeRandom)
-    code.innerText='Codice CP: ' + codeRandom
+    
     
     
     //Validatore
     let coupon= 1;
     let newPrice;
-    if (isNaN(userKm)){
+    if (isNaN(userKm) || !isNaN(user)){
         alert('Valore non valido')
     }else if ((userAge<=0) || (userKm <=0)){
         alert('Valore negativo non valido');
@@ -55,7 +55,9 @@ Button.addEventListener('click', function(){
         console.log(ticketPrice);
         element.innerText ='Prezzo biglietto: '+ ticketPrice +'€';
         couponTicket.innerText='Offerta: ' + 'Biglietto standard';
-        
+        userTicket.innerText ='Nome passeggero: ' + user;
+        cab.innerText='Carrozza: ' + cabRandom ;
+        code.innerText='Codice CP: ' + codeRandom
         if (userAge ==='minorenne'){
             coupon = 0.80;
             console.log(coupon);
